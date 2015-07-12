@@ -121,7 +121,8 @@
             <meta-data
             android:name="RONG_CLOUD_APP_KEY"
             android:value="$APP_KEY" />
-            <activity android:name="cordova.plugin.rongcloud.im.ConversationActivity">
+            <activity android:theme="@style/Theme.AppCompat.Light"
+                android:name="cordova.plugin.rongcloud.im.ConversationActivity">
                 <intent-filter>
                     <action android:name="android.intent.action.VIEW" />
                     <category android:name="android.intent.category.DEFAULT" />
@@ -161,7 +162,7 @@
                    android:scheme="rong" />
                 </intent-filter>
             </activity>
-            <activity
+            <activity android:theme="@style/Theme.AppCompat.Light"
                 android:name="cordova.plugin.rongcloud.im.PhotoActivity"
                 android:screenOrientation="portrait" />
             <!-- end -->

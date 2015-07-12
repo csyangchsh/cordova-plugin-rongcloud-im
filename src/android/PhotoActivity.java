@@ -1,4 +1,4 @@
-﻿package cordova.plugin.rongcloud.im;
+package cordova.plugin.rongcloud.im;
 
 import android.net.Uri;
 import android.os.Bundle;
@@ -30,6 +30,7 @@ public class PhotoActivity extends ActionBarActivity {
         setContentView(getApplicationContext().getResources()
                 .getIdentifier("ac_photo", "layout", getApplicationContext().getPackageName()));
         getSupportActionBar().setTitle("会话");
+        getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(getApplicationContext().getResources()
                 .getIdentifier("im_actionbar_back", "drawable", getApplicationContext().getPackageName()));
@@ -39,9 +40,9 @@ public class PhotoActivity extends ActionBarActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        int id = getApplicationContext().getResources()
+        int saveId = getApplicationContext().getResources()
                 .getIdentifier("save", "id", getApplicationContext().getPackageName());
-        if(item.getItemId() == id) {
+        if(item.getItemId() == saveId) {
             if(mDownloaded == null) {
                 Toast.makeText(this, "正在下载，请稍后保存！", Toast.LENGTH_SHORT).show();
                 return true;
@@ -60,6 +61,9 @@ public class PhotoActivity extends ActionBarActivity {
                 return true;
             }
             copyFile(from.getAbsolutePath(), to.getAbsolutePath());
+        } else if (item.getItemId() == android.R.id.home) {
+            finish();
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }
@@ -100,7 +104,6 @@ public class PhotoActivity extends ActionBarActivity {
         } else {
             return super.onCreateOptionsMenu(menu);
         }
-        return super.onCreateOptionsMenu(menu);
     }
 
     protected void initView() {

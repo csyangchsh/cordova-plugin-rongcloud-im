@@ -5,6 +5,7 @@ import org.apache.cordova.CallbackContext;
 
 import java.util.HashMap;
 
+import android.app.ActivityManager;
 import android.net.Uri;
 import android.view.View;
 import android.content.Context;
@@ -143,5 +144,18 @@ public class RongCloudIm extends CordovaPlugin implements RongIM.UserInfoProvide
     @Override
     public void onStartLocation(Context context, LocationCallback callback) {
         //context.startActivity(new Intent(context, SOSOLocationActivity.class));
+    }
+
+    public static String getCurProcessName(Context context) {
+        int pid = android.os.Process.myPid();
+        ActivityManager activityManager = (ActivityManager) context
+                .getSystemService(Context.ACTIVITY_SERVICE);
+        for (ActivityManager.RunningAppProcessInfo appProcess : activityManager
+                .getRunningAppProcesses()) {
+            if (appProcess.pid == pid) {
+                return appProcess.processName;
+            }
+        }
+        return null;
     }
 }
