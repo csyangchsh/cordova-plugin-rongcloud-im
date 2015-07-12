@@ -1,4 +1,4 @@
-package cordova.plugin.rongcloud.im;
+ï»¿package cordova.plugin.rongcloud.im;
 
 import android.net.Uri;
 import android.os.Bundle;
@@ -29,7 +29,7 @@ public class PhotoActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(getApplicationContext().getResources()
                 .getIdentifier("ac_photo", "layout", getApplicationContext().getPackageName()));
-        getSupportActionBar().setTitle("»á»°");
+        getSupportActionBar().setTitle("ä¼šè¯");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(getApplicationContext().getResources()
                 .getIdentifier("im_actionbar_back", "drawable", getApplicationContext().getPackageName()));
@@ -43,7 +43,7 @@ public class PhotoActivity extends ActionBarActivity {
                 .getIdentifier("save", "id", getApplicationContext().getPackageName());
         if(item.getItemId() == id) {
             if(mDownloaded == null) {
-                Toast.makeText(this, "ÕıÔÚÏÂÔØ£¬ÇëÉÔºó±£´æ£¡", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "æ­£åœ¨ä¸‹è½½ï¼Œè¯·ç¨åä¿å­˜ï¼", Toast.LENGTH_SHORT).show();
                 return true;
             }
 
@@ -56,7 +56,7 @@ public class PhotoActivity extends ActionBarActivity {
             String name = from.getName() + ".jpg";
             File to = new File(dir.getAbsolutePath(), name);
             if(to.exists()) {
-                Toast.makeText(this, "ÎÄ¼ş±£´æ³É¹¦£¡", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "æ–‡ä»¶ä¿å­˜æˆåŠŸï¼", Toast.LENGTH_SHORT).show();
                 return true;
             }
             copyFile(from.getAbsolutePath(), to.getAbsolutePath());
@@ -82,10 +82,10 @@ public class PhotoActivity extends ActionBarActivity {
             }
         }
         catch (Exception e) {
-            Toast.makeText(this, "ÎÄ¼ş±£´æ³ö´í£¡", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "æ–‡ä»¶ä¿å­˜å‡ºé”™ï¼", Toast.LENGTH_SHORT).show();
             e.printStackTrace();
         } finally {
-            Toast.makeText(this, "ÎÄ¼ş±£´æ³É¹¦£¡", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "æ–‡ä»¶ä¿å­˜æˆåŠŸï¼", Toast.LENGTH_SHORT).show();
         }
     }
 
