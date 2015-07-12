@@ -50,5 +50,4 @@
         <attr name="perLoadCount" format="integer" />
     </declare-styleable>
 
-
 </resources>

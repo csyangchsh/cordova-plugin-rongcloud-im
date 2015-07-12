@@ -22,7 +22,8 @@ import io.rong.imlib.model.Conversation;
 import io.rong.imlib.model.UserInfo;
 import io.rong.imlib.model.Message;
 import io.rong.imkit.model.UIConversation;
-
+import io.rong.message.ImageMessage;
+import cordova.plugin.rongcloud.im.PhotoActivity;
 /**
  * This class echoes a string called from JavaScript.
  */
@@ -113,11 +114,17 @@ public class RongCloudIm extends CordovaPlugin implements RongIM.UserInfoProvide
     // ConversationBehaviorListener
     @Override
     public boolean onMessageClick(Context context, View view, Message message) {
-        //if (message.getContent() instanceof LocationMessage) {
-            //Intent intent = new Intent(context, SOSOLocationActivity.class);
-            //intent.putExtra("location", message.getContent());
-            //context.startActivity(intent);
-        //}
+
+        if (message.getContent() instanceof ImageMessage) {
+            ImageMessage imageMessage = (ImageMessage) message.getContent();
+            Intent intent = new Intent(context, PhotoActivity.class);
+
+            intent.putExtra("photo", imageMessage.getLocalUri() == null ? imageMessage.getRemoteUri() : imageMessage.getLocalUri());
+            if (imageMessage.getThumUri() != null)
+                intent.putExtra("thumbnail", imageMessage.getThumUri());
+
+            context.startActivity(intent);
+        }
         return false;
     }
 

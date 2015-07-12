@@ -161,18 +161,25 @@
                    android:scheme="rong" />
                 </intent-filter>
             </activity>
+            <activity
+                android:name="cordova.plugin.rongcloud.im.PhotoActivity"
+                android:screenOrientation="portrait" />
             <!-- end -->
         </config-file>
         <resource-file src="src/android/res/drawable-xhdpi/im_actionbar_back.png" target="res/drawable-xhdpi/im_actionbar_back.png" />
+        <resource-file src="src/android/res/drawable-xhdpi/ic_setting.png" target="res/drawable-xhdpi/ic_setting.png" />
         <resource-file src="src/android/res/layout/conversation.xml" target="res/layout/conversation.xml" />
+        <resource-file src="src/android/res/layout/ac_photo.xml" target="res/layout/ac_photo.xml" />
         <resource-file src="src/android/res/layout/conversationlist.xml" target="res/layout/conversationlist.xml" />
         <resource-file src="src/android/res/layout/conversationsetting.xml" target="res/layout/conversationsetting.xml" />
         <resource-file src="src/android/res/layout/conversationgrouplist.xml" target="res/layout/conversationgrouplist.xml" />
+        <resource-file src="src/android/res/menu/photo_menu.xml" target="res/menu/photo_menu.xml" />
         <source-file src="src/android/RongCloudIm.java" target-dir="src/cordova/plugin/rongcloud/im" />
         <source-file src="src/android/ConversationActivity.java" target-dir="src/cordova/plugin/rongcloud/im" />
         <source-file src="src/android/ConversationListActivity.java" target-dir="src/cordova/plugin/rongcloud/im" />
         <source-file src="src/android/ConversationSettingActivity.java" target-dir="src/cordova/plugin/rongcloud/im" />
         <source-file src="src/android/ConversationGroupListActivity.java" target-dir="src/cordova/plugin/rongcloud/im" />
+        <source-file src="src/android/PhotoActivity.java" target-dir="src/cordova/plugin/rongcloud/im" />
         <framework src="platforms/android/IMKit" custom="true" />
         <framework src="com.android.support:appcompat-v7:+"/>
     </platform>
