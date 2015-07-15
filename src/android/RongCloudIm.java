@@ -15,8 +15,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-//import io.rong.app.activity.SOSOLocationActivity;
-
 import io.rong.imkit.RongIM;
 import io.rong.imlib.RongIMClient;
 import io.rong.imlib.model.Conversation;
@@ -24,7 +22,10 @@ import io.rong.imlib.model.UserInfo;
 import io.rong.imlib.model.Message;
 import io.rong.imkit.model.UIConversation;
 import io.rong.message.ImageMessage;
+import io.rong.message.TextMessage;
 import cordova.plugin.rongcloud.im.PhotoActivity;
+
+
 /**
  * This class echoes a string called from JavaScript.
  */
@@ -110,7 +111,7 @@ public class RongCloudIm extends CordovaPlugin implements RongIM.UserInfoProvide
             }
         });
     }
-    
+
     private void startPrivateChat(String userId, String title) {
         RongIM.getInstance().startPrivateChat(this.cordova.getActivity(), userId, title);
     }
