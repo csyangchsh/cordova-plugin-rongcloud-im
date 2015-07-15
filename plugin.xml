@@ -158,7 +158,7 @@
                     <category android:name="android.intent.category.DEFAULT" />
                     <data  
                    android:host="$PACKAGE_NAME"
-                   android:pathPrefix="/conversationgrouplist/"  
+                   android:path="/conversationgrouplist"
                    android:scheme="rong" />
                 </intent-filter>
             </activity>

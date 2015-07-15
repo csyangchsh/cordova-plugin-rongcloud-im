@@ -39,6 +39,9 @@ public class RongCloudIm extends CordovaPlugin implements RongIM.UserInfoProvide
         } else if (action.equals("init")) {
             this.init();
             return true;
+        } else if (action.equals("sendFirstMessage")) {
+            this.sendFirstMessage(args.getString(0), args.getString(1));
+            return true;
         } else if (action.equals("startPrivateChat")) {
             this.startPrivateChat(args.getString(0), args.getString(1));
             return true;
@@ -94,6 +97,20 @@ public class RongCloudIm extends CordovaPlugin implements RongIM.UserInfoProvide
         });
     }
 
+    private void sendFirstMessage(String useId, String msg) {
+        RongIM.getInstance().getRongIMClient().sendMessage(Conversation.ConversationType.PRIVATE, useId, TextMessage.obtain(msg), "", new RongIMClient.SendMessageCallback() {
+            @Override
+            public void onError(Integer messageId, RongIMClient.ErrorCode e) {
+
+            }
+
+            @Override
+            public void onSuccess(Integer integer) {
+
+            }
+        });
+    }
+    
     private void startPrivateChat(String userId, String title) {
         RongIM.getInstance().startPrivateChat(this.cordova.getActivity(), userId, title);
     }

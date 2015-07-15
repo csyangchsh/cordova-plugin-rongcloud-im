@@ -8,6 +8,10 @@ exports.connect = function(token, success, error) {
     exec(success, error, "RongCloudIm", "connect", [token]);
 };
 
+exports.sendFirstMessage = function(userId, msg) {
+    exec(null, null, "RongCloudIm", "sendFirstMessage", [userId, msg]);
+};
+
 exports.startPrivateChat = function(userId, title) {
     exec(null, null, "RongCloudIm", "startPrivateChat", [userId, title]);
 };

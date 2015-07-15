@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/src/cordova-plugin-rongcloud-im.iml" filepath="$PROJECT_DIR$/src/cordova-plugin-rongcloud-im.iml" />
-      <module fileurl="file://$PROJECT_DIR$/platforms/android/IMKit/src/main/main.iml" filepath="$PROJECT_DIR$/platforms/android/IMKit/src/main/main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cordova-plugin-rongcloud-im.iml" filepath="$PROJECT_DIR$/cordova-plugin-rongcloud-im.iml" />
     </modules>
   </component>
 </project>
